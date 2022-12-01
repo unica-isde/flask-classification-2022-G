@@ -6,3 +6,4 @@ Flask
 redis
 rq
 flask-wtf
+docker
