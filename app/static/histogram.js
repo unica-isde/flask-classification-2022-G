@@ -1,3 +1,13 @@
+/**
+ * Simple long polling client based on JQuery
+ * https://github.com/sigilioso/long_polling_example/blob/master/static/poll.js
+ */
+
+/**
+ * Request an update to the server and once it has answered, then update
+ * the content and request again.
+ * The server is supposed to response when a change has been made on data.
+ */
 function update(jobId) {
     $.ajax({
         url: `/histogram/${jobId}`,
