@@ -4,7 +4,8 @@ project_root = os.path.dirname(os.path.abspath(__file__))
 
 
 class Configuration:
-    """Contains the configuration information for the app."""
+
+    QUEUE_HIST = "histogram"    """Contains the configuration information for the app."""
 
     # classification
     image_folder_path = os.path.join(project_root, 'app/static/imagenet_subset')
@@ -17,3 +18,5 @@ class Configuration:
 
     REDIS_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}/0"
     QUEUE = "classification"
+
+    QUEUE_HIST = "histogram"
