@@ -13,7 +13,7 @@ import image_histogram
 @app.route('/histogram', methods=['GET', 'POST'])
 def histogram():
     """! Handles selection of image to analyze\
-            and serves output page.
+            and serves output page. almost try
     """
     form = HistogramForm()
 
