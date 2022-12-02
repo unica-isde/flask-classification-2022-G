@@ -17,5 +17,6 @@ def generate(img_id):
     results[0] = r.histogram()
     results[1] = g.histogram()
     results[2] = b.histogram()
-
+    print(results)
     return results
+
