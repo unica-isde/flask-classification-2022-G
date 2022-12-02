@@ -16,7 +16,7 @@ def histogram():
             and serves output page.
     """
     form = HistogramForm()
-    """
+
     if form.validate_on_submit():  # POST
         image_id = form.image.data
 
@@ -29,7 +29,7 @@ def histogram():
             task = q.enqueue_job(job)
 
         return render_template("histogram_output.html", image_id=image_id, jobID=task.get_id())
-"""
+
     # serve form if method is GET
     return render_template('histogram_select.html', form=form)
 
