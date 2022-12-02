@@ -25,7 +25,7 @@ def histogram():
         with Connection(redis_conn):
             q = Queue(name=Configuration.QUEUE_HIST)
             job = Job.create(image_histogram.generate, kwargs={"img_id": image_id })
-            task = q.enqueue_job(job.result)
+            task = q.enqueue_job(job)
 
         return render_template("histogram_output.html", image_id=image_id, jobID=task.get_id())
 
