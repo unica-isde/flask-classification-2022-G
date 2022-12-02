@@ -20,3 +20,5 @@ def generate(img_id):
 
     return results
 
+#histogram test
+print (generate("n01440764_tench.JPEG"))
