@@ -12,7 +12,7 @@ def run_worker():
     redis_url = config.REDIS_URL
     redis_connection = redis.from_url(redis_url)
     with Connection(redis_connection):
-        worker = Worker([config.QUEUE])
+        worker = Worker([config.QUEUE_HIST])
         worker.work()
 
 

@@ -19,6 +19,3 @@ def generate(img_id):
     results[2] = b.histogram()
 
     return results
-
-#histogram test
-print (generate("n01440764_tench.JPEG"))
