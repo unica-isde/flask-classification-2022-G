@@ -28,5 +28,3 @@ def run_worker_h():
 run_worker()
 run_worker_h()
 
-
-run_worker()
