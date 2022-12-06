@@ -1,7 +1,3 @@
 import subprocess
-
-subprocess.Popen("sudo -s python worker.py", start_new_session=True, shell=True)
-
-subprocess.Popen("sudo -s python worker_histo.py", start_new_session=True, shell=True)
-
-subprocess.Popen("sudo -s python runserver.py",start_new_session=True, shell=True)
+subprocess.Popen("systemctl restart redis-server.service", shell=True)
+subprocess.Popen("x-terminal-emulator -e \"python worker.py\" & x-terminal-emulator -e \"python worker_histo.py\" & x-terminal-emulator -e \"python runserver.py\"", shell=True)
