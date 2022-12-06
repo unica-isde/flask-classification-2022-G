@@ -37,7 +37,7 @@ the image directory can be found in the `config.py` file.
 ### Run locally
 
 To run the code without containers, it is sufficient to run 
-separately the `start.py` script. 
+the `start.py` script. 
 In order for the queue to work, you should have `redis`  
 installed and running (specify port in `config.py`). 
 
