@@ -11,8 +11,9 @@ def generate(img_id):
     img = fetch_image(img_id)
     r, g, b = img.split()
     img.close()
-
-    results = [0]*3
+    
+    n_channels=3
+    results = [0]*n_channels
 
     results[0] = r.histogram()
     results[1] = g.histogram()
