@@ -16,6 +16,4 @@ def run_worker():
         worker.work()
 
 
-
-
 run_worker()
