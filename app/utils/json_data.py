@@ -4,13 +4,7 @@ from flask import url_for
 
 
 def fetch(job_id, url=None):
-    """! Fetch the wanted JSON data
-
-    @param job_id Id string of a job.
-    @param url URL from which to retrieve the data.
-
-    @return The desired JSON data or None.
-    """
+    """Fetch the wanted JSON data"""
 
     if url is None:
         url = 'http://localhost:5000' + \

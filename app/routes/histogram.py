@@ -12,9 +12,8 @@ import image_histogram
 
 @app.route('/histogram', methods=['GET', 'POST'])
 def histogram():
-    """! Handles selection of image to analyze\
-            and serves output page. almost try
-    """
+    """Handles selection of image to analyze and serves output page."""
+
     form = HistogramForm()
 
     if form.validate_on_submit():  # POST

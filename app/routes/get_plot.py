@@ -7,12 +7,7 @@ from app.utils import json_data, custom_plot
 
 @app.route('/plot/<string:job_id>', methods=['GET'])
 def get_plot(job_id):
-    """! Serve plotted data as a PNG file
-
-    @param job_id Id string of a job.
-
-    @return The desired plot image or a response error.
-    """
+    """Serve plotted data as a PNG file """
 
     content = json_data.fetch(job_id)
 
