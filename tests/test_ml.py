@@ -40,6 +40,7 @@ class TestMLUtils(unittest.TestCase):
         self.assertTrue(out)
 
     def tearDown(self):
+        """add tearDown"""
         if hasattr(self._outcome, 'errors'):
             # Python 3.4 - 3.10  (These two methods have no side effects)
             result = self.defaultTestResult()

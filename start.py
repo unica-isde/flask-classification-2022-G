@@ -8,6 +8,7 @@ import contextlib
 
 
 def start_test (test_name):
+    """return test status"""
     outcome=""
     suite = unittest.TestLoader().loadTestsFromModule(test_name)
 
