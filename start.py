@@ -1,15 +1,15 @@
 import subprocess
-
 subprocess.Popen("systemctl restart redis-server.service", shell=True)
 import unittest
-from tests import test_ml, test_queue, test_redis
+from tests import test_ml,test_queue,test_redis
 import io
 import contextlib
 
 
-def start_test(test_name):
+
+def start_test (test_name):
     """return test status"""
-    outcome = ""
+    outcome=""
     suite = unittest.TestLoader().loadTestsFromModule(test_name)
 
     with io.StringIO() as buf:
@@ -21,73 +21,70 @@ def start_test(test_name):
         a.append(buf.getvalue())
         for x in a:
             if x.__contains__("OK"):
-                outcome = "YES"
+                outcome="YES"
             else:
-                outcome = "NO"
+                outcome="NO"
     return outcome
 
-
 def selection():
-    s = input("Which test do you want start?\n"
-              "you can enter the relative number:\n"
-              "1 - Machine Learning\n"
-              "2 - Queue\n"
-              "3 - Redis\n"
-              "4 - All tests\n\n\n"
-              "If you do not want to start the tests but only start the Web Server, click on:\n"
-              "5 - Start  Web server for image classification\n\n"
-              "Clik on \"0\"  to Exit....\n")
-    return s
+        s= input("Which test do you want start?\n"
+                  "you can enter the relative number:\n"
+                  "1 - Machine Learning\n"
+                  "2 - Queue\n"
+                  "3 - Redis\n"
+                  "4 - All tests\n\n\n"
+                 "If you do not want to start the tests but only start the Web Server, click on:\n"
+                  "5 - Start  Web server for image classification\n\n"
+                 "Clik on \"0\"  to Exit....\n")
+        return s
 
 
-def zero_selection():
-    print("Exit...\n")
+
+def zero_selection ():
+    print ("Exit...\n")
     return (0)
 
-
 def one_selection():
-    status = ""
-    print("Machine Learning test in course....\n")
-    if (start_test(test_ml) == "YES"):
+    status=""
+    print ("Machine Learning test in course....\n")
+    if (start_test (test_ml)=="YES"):
         print("Test is OK! Go on...\n")
-        status = "YES"
+        status="YES"
     else:
         print("Test is KO. Please verify ...\n")
-        status = "NO"
+        status="NO"
     return status
 
-
 def two_selection():
-    status = ""
-    print("Queue test in course....\n")
-    if start_test(test_queue) == "YES":
+    status=""
+    print ("Queue test in course....\n")
+    if start_test(test_queue)=="YES":
         print("Test is OK! Go on...\n")
-        status = "YES"
+        status="YES"
     else:
         print("Test is KO. Please verify setting file\n")
-        status = "NO"
+        status="NO"
     return status
 
 
 def three_selection():
-    status = ""
-    print("Redis Connection test in course....\n")
-    if start_test(test_redis) == "YES":
+    status=""
+    print ("Redis Connection test in course....\n")
+    if start_test(test_redis)=="YES":
         print("Test is OK! Go on...\n")
-        status = "YES"
+        status="YES"
     else:
         print("Test is KO... i try to fix redis server.\n")
         status = "NO"
         subprocess.Popen("systemctl restart redis-server.service", shell=True)
     return status
 
-
 def four_selection():
-    status = ""
-    print("All Tests start....\n\n\n")
+    status=""
+    print ("All Tests start....\n\n\n")
     print("Machine Learning test in course....\n")
 
-    status = one_selection()
+    status=one_selection()
     if (status == "YES"):
         print("Test is OK! Go on...\n")
 
@@ -95,15 +92,16 @@ def four_selection():
         print("Test is KO. Please verify ...\n")
 
     print("Queue test in course....\n")
-    status = two_selection()
+    status=two_selection()
     if status == "YES":
         print("Test is OK! Go on...\n")
 
     else:
         print("Test is KO. Please verify setting file.\n")
 
+
     print("Redis Connection test in course....\n")
-    status = three_selection()
+    status= three_selection()
     if status == "YES":
         print("Test is OK! Go on...\n")
 
@@ -113,45 +111,41 @@ def four_selection():
 
     return status
 
-
 def five_selection():
-    print("Web server for image classification starts....\n")
+    print ("Web server for image classification starts....\n")
     subprocess.Popen("systemctl restart redis-server.service", shell=True)
     subprocess.Popen(
-        "x-terminal-emulator -e \"python worker.py\" & x-terminal-emulator -e \"python worker_histo.py\" & "
-        "x-terminal-emulator -e \"python runserver.py\"",
+        "x-terminal-emulator -e \"python worker.py\" & x-terminal-emulator -e \"python worker_histo.py\" & x-terminal-emulator -e \"python runserver.py\"",
         shell=True)
 
+def tests_selection ():
+    sel=selection ()
+    print ("Your selection is: ", sel,"... please wait...\n")
 
-def tests_selection():
-    sel = selection()
-    print("Your selection is: ", sel, "... please wait...\n")
+    if sel=="0":
+       zero_selection()
 
-    if sel == "0":
-        zero_selection()
-
-    elif sel == "1":
+    elif sel=="1":
         one_selection()
         tests_selection()
 
-    elif (sel == "2"):
+    elif (sel=="2"):
         two_selection()
-        tests_selection()
+        tests_selection ()
 
-    elif (sel == "3"):
+    elif (sel=="3"):
         three_selection()
-        tests_selection()
+        tests_selection ()
 
-    elif (sel == "4"):
+    elif (sel=="4"):
         four_selection()
-        tests_selection()
+        tests_selection ()
 
-    elif (sel == "5"):
+    elif (sel=="5"):
         five_selection()
 
     else:
-        print("Invalid selection. Please try again.\n")
+        print ("Invalid selection. Please try again.\n")
         tests_selection()
 
-
-tests_selection()
+tests_selection ()
