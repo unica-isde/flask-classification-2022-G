@@ -11,7 +11,6 @@ def start_test (test_name):
     """return test status"""
     outcome=""
     suite = unittest.TestLoader().loadTestsFromModule(test_name)
-
     with io.StringIO() as buf:
         # run the tests
         with contextlib.redirect_stdout(buf):
@@ -27,6 +26,7 @@ def start_test (test_name):
     return outcome
 
 def selection():
+    # the method returns the number of the selection made by the user
         s= input("Which test do you want start?\n"
                   "you can enter the relative number:\n"
                   "1 - Machine Learning\n"
