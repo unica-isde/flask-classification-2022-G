@@ -79,7 +79,6 @@ def three_selection():
 
 def four_selection():
     print ("All Tests start....\n\n\n")
-    print("Machine Learning test in course....\n")
     status_Machine_Learning_test=one_selection()
     status_Queue_test=two_selection()
     status_Redis_Connection_test= three_selection()
