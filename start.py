@@ -65,7 +65,6 @@ def two_selection():
         status="NO"
     return status
 
-
 def three_selection():
     print ("Redis Connection test in course....\n")
     if start_test(test_redis)=="YES":
