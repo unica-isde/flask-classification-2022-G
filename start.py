@@ -45,7 +45,6 @@ def zero_selection ():
     return (0)
 
 def one_selection():
-    status=""
     print ("Machine Learning test in course....\n")
     if (start_test (test_ml)=="YES"):
         print("Test is OK! Go on...\n")
@@ -68,7 +67,6 @@ def two_selection():
 
 
 def three_selection():
-    status=""
     print ("Redis Connection test in course....\n")
     if start_test(test_redis)=="YES":
         print("Test is OK! Go on...\n")
@@ -80,35 +78,12 @@ def three_selection():
     return status
 
 def four_selection():
-    status=""
     print ("All Tests start....\n\n\n")
     print("Machine Learning test in course....\n")
-
-    status=one_selection()
-    if (status == "YES"):
-        print("Test is OK! Go on...\n")
-
-    else:
-        print("Test is KO. Please verify ...\n")
-
-    print("Queue test in course....\n")
-    status=two_selection()
-    if status == "YES":
-        print("Test is OK! Go on...\n")
-
-    else:
-        print("Test is KO. Please verify setting file.\n")
-
-
-    print("Redis Connection test in course....\n")
-    status= three_selection()
-    if status == "YES":
-        print("Test is OK! Go on...\n")
-
-    else:
-        print("Test is KO... i try to fix redis server...\n")
-        subprocess.Popen("systemctl restart redis-server.service", shell=True)
-
+    status_Machine_Learning_test=one_selection()
+    status_Queue_test=two_selection()
+    status_Redis_Connection_test= three_selection()
+    status =[status_Machine_Learning_test,status_Queue_test,status_Redis_Connection_test]
     return status
 
 def five_selection():
