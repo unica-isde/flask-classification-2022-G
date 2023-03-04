@@ -6,7 +6,7 @@ from config import Configuration
 
 config = Configuration()
 
-
+@staticmethod
 @app.route('/classifications/<string:job_id>', methods=['GET'])
 def classifications_id(job_id):
     """Returns the status and the result of the job identified

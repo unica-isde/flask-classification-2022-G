@@ -5,7 +5,7 @@ from config import Configuration
 
 config = Configuration()
 
-
+@staticmethod
 def run_worker():
     """Picks tasks from the queue and runs them,
     storing back the results."""
