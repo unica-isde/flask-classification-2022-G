@@ -4,7 +4,7 @@ from flask import Response, abort
 
 from app.utils import json_data, custom_plot
 
-
+@staticmethod
 @app.route('/plot/<string:job_id>', methods=['GET'])
 def get_plot(job_id):
     """Serve plotted data as a PNG file """

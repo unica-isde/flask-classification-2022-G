@@ -3,7 +3,7 @@ from flask import Response, abort
 
 from app.utils import json_data
 
-
+@staticmethod
 @app.route('/json/<string:job_id>', methods=['GET'])
 def get_json(job_id):
     """Serve JSON data as a file """

@@ -1,6 +1,6 @@
 from ml.classification_utils import fetch_image
 
-
+@staticmethod
 def generate(img_id):
     """! Generate histogram information-set
     @param img_id ID of the image to retrieve and analyze

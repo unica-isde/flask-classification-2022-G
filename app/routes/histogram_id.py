@@ -6,7 +6,7 @@ from config import Configuration
 
 config = Configuration()
 
-
+@staticmethod
 @app.route('/histogram/<string:job_id>', methods=['GET'])
 def histogram_id(job_id):
     """From the id specified in the path, returns the status and the result of the job identified."""

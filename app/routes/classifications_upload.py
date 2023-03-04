@@ -17,7 +17,7 @@ the classification of an uploaded image
 
 config = Configuration()
 
-
+@staticmethod
 @app.route('/classification_image_upload', methods=['GET', 'POST'])
 def classification_image_upload():
     """

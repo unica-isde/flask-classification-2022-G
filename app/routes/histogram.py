@@ -10,6 +10,7 @@ from app.forms.histogram_form import HistogramForm
 import image_histogram
 
 
+@staticmethod
 @app.route('/histogram', methods=['GET', 'POST'])
 def histogram():
     """Handles selection of image to analyze and serves output page."""

@@ -5,7 +5,7 @@ from config import Configuration
 
 conf = Configuration()
 
-
+@staticmethod
 def prepare_models():
     """Pre-downloads the models specified in the configuration object."""
     for model_name in conf.models:
