@@ -1,5 +1,4 @@
 import unittest
-
 import PIL
 import torch
 
@@ -38,17 +37,3 @@ class TestMLUtils(unittest.TestCase):
     def test_classification(self):
         out = classify_image(self.model_id, self.image_id)
         self.assertTrue(out)
-
-    def tearDown(self):
-        """add tearDown"""
-        if hasattr(self._outcome, 'errors'):
-            # Python 3.4 - 3.10  (These two methods have no side effects)
-            result = self.defaultTestResult()
-            self._feedErrorsToResult(result, self._outcome.errors)
-        else:
-            # Python 3.11+
-            result = self._outcome.result
-        ok = all(test != self for test, text in result.errors + result.failures)
-
-
-

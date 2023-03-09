@@ -5,7 +5,6 @@ from tests import test_ml,test_queue,test_redis
 import io
 import contextlib
 
-
 @staticmethod
 def start_test (test_name):
     """return test status"""
@@ -24,6 +23,7 @@ def start_test (test_name):
             else:
                 outcome="NO"
     return outcome
+
 @staticmethod
 def selection():
     # the method returns the number of the selection made by the user
@@ -38,11 +38,11 @@ def selection():
                  "Clik on \"0\"  to Exit....\n")
         return s
 
-
 @staticmethod
 def zero_selection ():
     print ("Exit...\n")
     return (0)
+
 @staticmethod
 def one_selection():
     print ("Machine Learning test in course....\n")
@@ -53,6 +53,7 @@ def one_selection():
         print("Test is KO. Please verify ...\n")
         status="NO"
     return status
+
 @staticmethod
 def two_selection():
     status=""
@@ -64,6 +65,7 @@ def two_selection():
         print("Test is KO. Please verify setting file\n")
         status="NO"
     return status
+
 @staticmethod
 def three_selection():
     print ("Redis Connection test in course....\n")
@@ -75,6 +77,7 @@ def three_selection():
         status = "NO"
         subprocess.Popen("systemctl restart redis-server.service", shell=True)
     return status
+
 @staticmethod
 def four_selection():
     print ("All Tests start....\n\n\n")
@@ -83,6 +86,7 @@ def four_selection():
     status_Redis_Connection_test= three_selection()
     status =[status_Machine_Learning_test,status_Queue_test,status_Redis_Connection_test]
     return status
+
 @staticmethod
 def five_selection():
     print ("Web server for image classification starts....\n")
@@ -90,6 +94,7 @@ def five_selection():
     subprocess.Popen(
         "x-terminal-emulator -e \"python worker.py\" & x-terminal-emulator -e \"python worker_histo.py\" & x-terminal-emulator -e \"python runserver.py\"",
         shell=True)
+
 @staticmethod
 def tests_selection ():
     sel=selection ()

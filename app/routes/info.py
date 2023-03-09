@@ -13,5 +13,4 @@ def info():
         "models": list_of_models,
         "images": list_of_images
     }
-
     return data
