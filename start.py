@@ -125,5 +125,4 @@ def tests_selection ():
     else:
         print ("Invalid selection. Please try again.\n")
         tests_selection()
-
 tests_selection ()
