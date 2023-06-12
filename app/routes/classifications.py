@@ -7,6 +7,7 @@ from app import app
 from app.forms.classification_form import ClassificationForm
 from ml.classification_utils import classify_image
 from config import Configuration
+from PIL import Image, ImageEnhance
 
 config = Configuration()
 
