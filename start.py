@@ -92,17 +92,20 @@ class TestRunner:
     @staticmethod
     def five_selection():
         print("Web server for image classification starting....\n")
-        subprocess.Popen("systemctl restart redis-server.service", shell=True)
-        subprocess.Popen("service redis-server start", shell=True)
-        if(subprocess.Popen(
-            "x-terminal-emulator",
-            shell=True,stdout=True).returncode!=None):
+        try:
+            subprocess.Popen("systemctl restart redis-server.service", shell=True)
+        except Exception:
+            subprocess.Popen("service redis-server start", shell=True)
+
+        try:
+            subprocess.Popen("python3 worker.py & python3 worker_histo.py & python3 runserver.py", shell=True)
+        except Exception:
+            subprocess.Popen(
+                "python worker.py & python worker_histo.py & python runserver.py",
+                shell=True)
+        finally:
             subprocess.Popen(
                 "x-terminal-emulator -e \"python worker.py\" & x-terminal-emulator -e \"python worker_histo.py\" & x-terminal-emulator -e \"python runserver.py\"",
-                shell=True)
-        else:
-            subprocess.Popen(
-                "python3 worker.py & python3 worker_histo.py & python3 runserver.py",
                 shell=True)
 
     @staticmethod
