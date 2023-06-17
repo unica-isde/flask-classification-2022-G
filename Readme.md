@@ -17,7 +17,9 @@ pip install -r requirements.txt
 
 Additional requirements:
 * Redis
-* Docker
+  * for Windows ---> https://redis.io/docs/getting-started/installation/install-redis-on-windows/
+
+  * for Linux ---> https://redis.io/docs/getting-started/installation/install-redis-on-linux/
 
 ## Configuration
 
@@ -35,7 +37,6 @@ the image directory can be found in the `config.py` file.
 ## Usage
 
 ### Run locally
-
 To run the code without containers, it is sufficient to run 
 the `start.py` script. 
 In order for the queue to work, you should have `redis`  
