@@ -29,7 +29,7 @@ def is_valid_filename(filename):
 
 def return_path():
     '''
-    this function returns the path of the image specified in UPLOAD_FOLDER (in config.py)
+    this function returns the path of the image specified in UPLOADED_IMAGE_FOLDER (in config.py)
     if this path doesn't exist, it creates it
     '''
     image_path = Configuration.UPLOADED_IMAGE_FOLDER
