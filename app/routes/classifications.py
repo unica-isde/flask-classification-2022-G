@@ -61,7 +61,7 @@ def get_path():
     working_path = os.path.join(project_root, 'static/imagenet_subset/')
     return working_path
 
-# subsidiary function responsible of the image transformation(s)
+# subsidiary function responsible for the image transformation(s)
 def apply_transform(path, id, col, br, con, sh):
     img_new_id = 'mod_' + id    # new image id
     
