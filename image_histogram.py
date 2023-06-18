@@ -1,11 +1,10 @@
 from ml.classification_utils import fetch_image
 
-
-
 def generate(img_id):
-    """Generate histogram information-set
-    img_id = ID of the image to retrieve and analyze
-    return List of histogram dataset for RGB
+    """
+    Generate histogram information-set.
+    img_id: ID of the image to retrieve and analyze.
+    Returns a list of histogram datasets for RGB.
     """
     img = fetch_image(img_id)
     r, g, b = img.split()
