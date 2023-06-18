@@ -16,7 +16,7 @@
         <div class="col">
             <div class="card">
                 <img class="large-front-thumbnail"
-                     src="{{ url_for('static', filename='image_uploaded/'+image_id) }} "
+                     src="{{ url_for('static', filename='images_uploaded/'+image_id) }} "
                      alt={{ image_id }}/>
             </div>
         </div>
@@ -37,7 +37,7 @@
                             <td>{{ r[0] }}</td>
                             <td>{{ "%.3f"|format(r[1]) }}</td>
                         </tr>
-                    {% end-for %}
+                    {% endfor %}
                     </tbody>
                 </table>
                 <a class="btn btn-primary" href="/classification_image_upload" role="button">Back</a>
