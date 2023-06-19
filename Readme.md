@@ -6,7 +6,7 @@
 Use git to clone the repository:
 
 ```bash
-git clone https://github.com/IlPodd/flask-classification-2022-G.git
+git clone https://github.com/unica-isde/flask-classification-2022-G
 ```
 
 And install the requirements with 
@@ -37,8 +37,8 @@ the image directory can be found in the `config.py` file.
 ## Usage
 
 ### Run locally
-To run the code without containers, it is sufficient to run 
-the `start.py` script. 
-In order for the queue to work, you should have `redis`  
-installed and running (specify port in `config.py`). 
-
+To run the code without containers, it is sufficient to run separately the `runserver.py` script, 
+the `worker.py` script and the ` worker_histo.py` script. 
+The workers will process jobs stored in the queue. 
+In order for the queue to work, you should have redis
+installed and running (specify port in config.py).
