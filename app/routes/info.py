@@ -2,7 +2,6 @@ from app import app
 from app.utils.list_images import list_images
 from config import Configuration
 
-@staticmethod
 @app.route('/info', methods=['GET'])
 def info():
     """Returns a dictionary with the list of models and

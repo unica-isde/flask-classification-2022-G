@@ -12,7 +12,6 @@ from PIL import Image, ImageEnhance
 
 config = Configuration()
 
-@staticmethod
 @app.route('/classifications', methods=['GET', 'POST'])
 def classifications():
     """API for selecting a model and an image and running a 
