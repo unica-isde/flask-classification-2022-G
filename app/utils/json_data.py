@@ -21,6 +21,5 @@ def fetch(job_id, url=None):
         content = json.dumps(dict(tmp.get('data')))
         return content
 
-    except Exception as e:
-        print(repr(e))
+    except Exception:
         return None
