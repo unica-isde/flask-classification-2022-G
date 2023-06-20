@@ -7,3 +7,4 @@ from .get_json import *
 from .get_plot import *
 from .histogram import *
 from .histogram_id import *
+from .transformations import *
