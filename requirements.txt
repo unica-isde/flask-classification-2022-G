@@ -6,3 +6,7 @@ Flask
 redis
 rq
 flask-wtf
+docker
+matplotlib
+markupsafe
+wtforms

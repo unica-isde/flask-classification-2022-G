@@ -10,7 +10,6 @@ import requests
 
 from config import Configuration
 
-
 def prepare_images():
     """Downloads a subset of the Imagenet Dataset."""
     img_folder = Configuration().image_folder_path
@@ -27,7 +26,6 @@ def prepare_images():
             shutil.move(os.path.join(sub_dir, f), img_folder)
         shutil.rmtree(sub_dir)
     logging.info(f"Images downloaded and stored in {img_folder}.")
-
 
 def prepare_labels():
     """Saves a JSON file containing Imagenet labels as a list where

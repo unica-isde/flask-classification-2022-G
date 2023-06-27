@@ -2,7 +2,6 @@ from app import app
 from app.utils.list_images import list_images
 from config import Configuration
 
-
 @app.route('/info', methods=['GET'])
 def info():
     """Returns a dictionary with the list of models and
@@ -13,5 +12,4 @@ def info():
         "models": list_of_models,
         "images": list_of_images
     }
-
     return data

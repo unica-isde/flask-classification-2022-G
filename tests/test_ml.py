@@ -1,5 +1,4 @@
 import unittest
-
 import PIL
 import torch
 
@@ -38,4 +37,3 @@ class TestMLUtils(unittest.TestCase):
     def test_classification(self):
         out = classify_image(self.model_id, self.image_id)
         self.assertTrue(out)
-

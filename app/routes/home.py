@@ -1,10 +1,7 @@
 from flask import render_template
-
 from app import app
 from config import Configuration
-
 conf = Configuration()
-
 
 @app.route('/home', methods=['GET'])
 @app.route('/index', methods=['GET'])

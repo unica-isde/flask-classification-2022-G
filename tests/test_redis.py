@@ -1,7 +1,5 @@
 import unittest
-
 from config import Configuration
-
 
 class TestRedis(unittest.TestCase):
     import redis

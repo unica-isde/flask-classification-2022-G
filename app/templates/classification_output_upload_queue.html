@@ -10,16 +10,13 @@
             margin: 0 auto;
         }
 
-		.dl {
-			margin-top: 1%;
-		}
 
     </style>
     <div class="row">
         <div class="col">
             <div class="card">
                 <img class="large-front-thumbnail"
-                     src="{{ url_for('static', filename='imagenet_subset/'+image_id) }} "
+                     src="{{ url_for('static', filename='images_uploaded/'+image_id) }} "
                      alt={{ image_id }}/>
             </div>
         </div>
@@ -35,17 +32,10 @@
                 </div>
 
 
-                <a class="btn btn-dark" href="/classifications" role="button">Back</a>
-				<a hidden class="dl btn btn-light" role="button" href="{{ url_for('get_plot', job_id=jobID) }}">Download Plot</a>
-				<a hidden class="dl btn btn-light" role="button" href="{{ url_for('get_json', job_id=jobID) }}">Download JSON</a>
-
+                <a class="btn btn-dark" href="/classification_image_upload" role="button">Back</a>
             </div>
         </div>
     </div>
-    <script
-            src="{{ url_for("static", filename="poll.js") }}" id="polling" jobid={{ jobID }}></script>
+    <script src="{{ url_for("static", filename="poll.js") }}" id="polling" jobid={{ jobID }}></script>
 
 {% endblock %}
-
-
-

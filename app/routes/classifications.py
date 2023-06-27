@@ -10,19 +10,21 @@ from config import Configuration
 
 config = Configuration()
 
-
+@staticmethod
 @app.route('/classifications', methods=['GET', 'POST'])
 def classifications():
     """API for selecting a model and an image and running a 
     classification job. Returns the output scores from the 
     model."""
     form = ClassificationForm()
-    if form.validate_on_submit():  # POST
+
+    if form.validate_on_submit():  # POST        
         image_id = form.image.data
         model_id = form.model.data
 
         redis_url = Configuration.REDIS_URL
         redis_conn = redis.from_url(redis_url)
+
         with Connection(redis_conn):
             q = Queue(name=Configuration.QUEUE)
             job = Job.create(classify_image, kwargs={
